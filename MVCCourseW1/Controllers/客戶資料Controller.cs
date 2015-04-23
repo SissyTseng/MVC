@@ -20,6 +20,12 @@ namespace MVCCourseW1.Controllers
             return View(db.客戶資料.ToList());
         }
 
+        public ActionResult CustomerReport()
+        {
+            
+            return View(db.客戶報表.ToList());
+        }
+
         // GET: 客戶資料/Details/5
         public ActionResult Details(int? id)
         {
