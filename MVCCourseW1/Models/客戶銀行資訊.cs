@@ -12,7 +12,7 @@ namespace MVCCourseW1.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class 客戶銀行資訊
     {
         public int Id { get; set; }
@@ -25,7 +25,7 @@ namespace MVCCourseW1.Models
         public string 帳戶名稱 { get; set; }
         [Required]
         public string 帳戶號碼 { get; set; }
-    
+
         public virtual 客戶資料 客戶資料 { get; set; }
     }
 }

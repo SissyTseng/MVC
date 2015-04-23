@@ -12,7 +12,7 @@ namespace MVCCourseW1.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class 客戶資料
     {
         public 客戶資料()
@@ -20,7 +20,7 @@ namespace MVCCourseW1.Models
             this.客戶銀行資訊 = new HashSet<客戶銀行資訊>();
             this.客戶聯絡人 = new HashSet<客戶聯絡人>();
         }
-    
+
         public int Id { get; set; }
         [Required]
         public string 客戶名稱 { get; set; }
@@ -30,9 +30,9 @@ namespace MVCCourseW1.Models
         public string 傳真 { get; set; }
         public string 地址 { get; set; }
         [Required]
-        [RegularExpression(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$",ErrorMessage="Email格式錯誤")]
+        [RegularExpression(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Email格式錯誤")]
         public string Email { get; set; }
-    
+
         public virtual ICollection<客戶銀行資訊> 客戶銀行資訊 { get; set; }
         public virtual ICollection<客戶聯絡人> 客戶聯絡人 { get; set; }
     }
