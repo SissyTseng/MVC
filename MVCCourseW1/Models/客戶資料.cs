@@ -30,7 +30,7 @@ namespace MVCCourseW1.Models
         public string 傳真 { get; set; }
         public string 地址 { get; set; }
         [Required]
-        [RegularExpression(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Email格式錯誤")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Email格式錯誤")]
         public string Email { get; set; }
 
         public virtual ICollection<客戶銀行資訊> 客戶銀行資訊 { get; set; }

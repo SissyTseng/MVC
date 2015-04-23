@@ -21,8 +21,9 @@ namespace MVCCourseW1.Models
         [Required]
         public string 姓名 { get; set; }
         [Required]
-        [RegularExpression(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Email格式錯誤")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Email格式錯誤")]
         public string Email { get; set; }
+        [RegularExpression(@"\d{4}-\d{6}", ErrorMessage = "手機格式錯誤,例:0911-111111")]
         public string 手機 { get; set; }
         public string 電話 { get; set; }
         public bool 是否已刪除 { get; set; }
