@@ -12,6 +12,7 @@ namespace MVCCourseW1.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
     
     public partial class 客戶聯絡人
     {
@@ -22,6 +23,7 @@ namespace MVCCourseW1.Models
         public string 姓名 { get; set; }
         [Required]
         [DataType(DataType.EmailAddress, ErrorMessage = "Email格式錯誤")]
+        [Remote("CheckContactEmail", "Validate", AdditionalFields = "客戶Id,Email",ErrorMessage="Email不得重覆")]
         public string Email { get; set; }
         [RegularExpression(@"\d{4}-\d{6}", ErrorMessage = "手機格式錯誤,例:0911-111111")]
         public string 手機 { get; set; }
